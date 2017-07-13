@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One to Multi - DONE</title>
+
+    <script>
+        const myArray = ['hello', 34, true, false, 'goodbye', 56, 12, '25', true];
+
+//        // version 1
+//        const groupArray1 = (array) => {
+//            let start1 = performance.now();
+//            let stringArray = [];
+//            let numberArray = [];
+//            let booleanArray = [];
+//            const output = [];
+//
+//            // operate on each value in input array
+//            for (let i = 0; i < array.length; i++) {
+//                // check typeof to see if it matches one of the three
+//                if (typeof array[i] === 'string') {
+//                    stringArray.push(array[i]);
+//                } else if (typeof array[i] === 'number') {
+//                    numberArray.push(array[i]);
+//                } else if (typeof array[i] === 'boolean') {
+//                    booleanArray.push(array[i]);
+//                } else {
+//                    console.log(array[i] + ' is not a string, number, or boolean.')
+//                }
+//            }
+//
+//            // combine our three arrays into our master array
+//            output.splice(0, 0, stringArray, numberArray, booleanArray);
+//
+//            let end1 = performance.now();
+//            console.log(end1-start1);
+//            return output;
+//        };
+
+
+        // version 2 (slightly cleaner version, and averaging around 25% faster too)
+        const groupArray2 = (array) => {
+            let start2 = performance.now();
+            const output = [[],[],[]];
+
+            // operate on each value in input array
+            for (let i = 0; i < array.length; i++) {
+                // check typeof to see if it matches one of the three
+                if (typeof array[i] === 'string') {
+                    output[0].push(array[i]);
+                } else if (typeof array[i] === 'number') {
+                    output[1].push(array[i]);
+                } else if (typeof array[i] === 'boolean') {
+                    output[2].push(array[i]);
+                } else {
+                    console.log(array[i] + ' is not a string, number, or boolean.')
+                }
+            }
+
+            let end2 = performance.now();
+            console.log(end2-start2);
+            return output;
+        };
+
+        console.log('Original: ', myArray);
+//        console.log('========================');
+//        console.log('Grouped 1: ', groupArray1(myArray), );
+        console.log('========================');
+        console.log('Grouped 2: ', groupArray2(myArray), );
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

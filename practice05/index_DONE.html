@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FizzBuzz - DONE</title>
+    <script>
+
+        const fizzBuzz = () => {
+            // we need to output the numbers 1 - 100 (with some mods)
+            for (let i = 1; i <= 100; i++) {
+                let message;
+
+                // check if the current number is evenly divisible by 3 and 5
+                if (i % 3 === 0 && i % 5 === 0) {
+                    message = 'FizzBuzz';
+                } else if (i % 3 === 0) { // else check if it's evenly divisible by 3
+                    message = 'Fizz';
+                } else if (i % 5 === 0) { // else check if it's evenly divisible by 5
+                    message = 'Buzz';
+                } else {                    // else just print the number
+                    message = i;
+                }
+
+                console.log(message);
+            }
+        };
+
+        fizzBuzz();
+
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

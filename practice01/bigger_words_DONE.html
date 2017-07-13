@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bigger Words</title>
+
+    <script>
+        var myArray = ['bug', 'insect', 'mammal', 'reptile', 'mammoth', 'turtles'];
+
+        function biggerWords(string, array) {
+            var newArray = [];
+
+            // create a variable to hold our passed in string length
+            var myStringLength = string.length;
+
+            // loop through each string in the array
+            for (var i = 0; i < array.length; i++) {
+
+                // check each string in the array, comparing the length with the passed in string
+                // if it's greater than the passed in string length, push it to our new array
+                if (array[i].length > myStringLength) {
+                    newArray.push(array[i]);
+                }
+            }
+            return newArray;
+        }
+        console.log(biggerWords('whales',myArray));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Convert - Jason Pau</title>
+    <script>
+
+        // THIS METHOD IS WAAAAAYYY slower than the original method...must be a better way
+//        function character_convert(string) {
+//            var start = performance.now();
+//            var output = '';
+//            var lookupObj = {};
+//
+//            // we need to loop through each character in the string
+//            for (var c = 0; c < string.length; c++) {
+//
+//                // check if the current character is already in our lookup object
+//                if (!lookupObj.hasOwnProperty(string[c])) {
+//
+//                    console.log(lookupObj.hasOwnProperty(string[c]));
+//                    // add the current letter and it's ASCII value to our lookup object "table"
+//                    lookupObj[string[c]] = string.charCodeAt(c);
+//                }
+//
+//
+//                // get the ascii value, and concat to the output string
+//                output += string.charCodeAt(c);
+//
+//            }
+//            console.log(lookupObj);
+//
+//            var end = performance.now();
+//            console.log(end - start);
+//            // initial speed average 0.05 ms, dropping to ~ 0.025 - 0.030 or so on subsequent calls
+//
+//            return output;
+//        }
+//        console.log(character_convert('the cat in the hat'));
+
+
+        function character_convert(string) {
+            var output = '';
+
+            // we need to loop through each character in the string
+            for (var c = 0; c < string.length; c++) {
+
+                // get the ascii value, and concat to the output string
+                output += string.charCodeAt(c);
+            }
+            return output;
+        }
+        console.log(character_convert('the cat in the hat'));
+
+    </script>
+</head>
+<body>
+<h1>Inspect!</h1>
+</body>
+</html>

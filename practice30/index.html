@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random number or array element</title>
+
+    <script>
+
+        // version 1
+        function random_range(start_num, end_num) {
+
+            // check if both the first and second parameters are numbers
+            // if so, run a math random between (inclusive) the two numbers and return the value
+            if (typeof start_num === 'number' && typeof end_num === 'number') {
+                return Math.round((Math.random() * (end_num - start_num)) + start_num);
+            }
+            // check if the first value is an array
+            // if so, return a random element from that array (while ignoring any other parameters)
+            // get length of array, run math random for that range, then pull "array[randomly_generated_number]" and return it
+            else if (Array.isArray(start_num)) {
+                return start_num[Math.floor(Math.random() * start_num.length)];
+            }
+        }
+
+        console.log(random_range(1,100));
+
+        console.log(random_range(['a','b','c','d','e']));
+
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

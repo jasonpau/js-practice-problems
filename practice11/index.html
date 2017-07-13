@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Even Odds</title>
+  <script>
+
+    // evenodd([2,5,1,6,8,2,20,'cat',13,3]);`
+    // Output - {
+    //  odd: [5, 1, 13, 3],
+    //  even: [2, 6, 8, 20]
+    // }
+
+    const myArray = [2,5,1,6,8,2,20,'cat',13,3];
+
+    function evenOdd(array) {
+      let outputArray = {};
+
+      // we need to go through each element in the array and do something with each value
+      outputArray = {
+        odd: array.filter(function(element){
+          return element % 2 === 1;
+        }),
+        even: array.filter(function(element){
+          return element % 2 === 0;
+        })
+      };
+      return outputArray;
+    }
+
+    console.log(evenOdd(myArray));
+
+
+  </script>
+</head>
+<body>
+  <h1>Inspect!</h1>
+</body>
+</html>

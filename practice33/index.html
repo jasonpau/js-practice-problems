@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invert Positive Number - DONE</title>
+    <script>
+
+        function invert_negatives(number) {
+
+            // if we already have a negative number OR zero, return the number as-is
+            if (isNaN(Math.sign(number))) {
+                return false;
+            } else if (Math.sign(number) ===  -1 /* || Math.sign(number) === 0 */) {
+                return number;
+            } else {
+                return number * -1;
+            }
+
+        }
+
+        console.log(invert_negatives(-5));
+        console.log(invert_negatives(4000));
+        console.log(invert_negatives('puppies'));
+
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

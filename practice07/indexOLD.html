@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Igpay Atinlay</title>
+
+    <script>
+
+        function translate(myString) {
+
+            var newString = '';
+
+            var vowels = ['a','e','i','o','u'];
+
+            // split up string into array of strings?
+            var stringArray = myString.split(' ');
+
+            // i hate strings, so split each word into an array
+//            for (var i = 0; i < stringArray.length; i++) {
+//                stringArray[i] = stringArray[i].split('');
+//            }
+
+            // loop through each word in array
+            for (var i = 0; i < stringArray.length; i++) {
+
+                // check if position 0 is capitalized, if so lowercase it, and capitalize position 1
+                if (stringArray[i][0] === stringArray[i][0].toUpperCase()) {
+
+                    // set aside the first letter, but in lowercase format
+                    var firstLetter = stringArray[i][0].toLowerCase();
+
+                    // create a new word, sans the first letter
+                    var tempWord = stringArray[i].slice(1);
+
+                    // concat the first letter to the end
+                    tempWord += firstLetter;
+
+                    // capitalize
+
+                    var newFirstLetter = tempWord[0].toUpperCase();
+                    newFirstLetter
+
+                    // overwrite original string with capitalized first letter;
+                    stringArray[i] =
+                }
+
+                // if first letter is a vowel, just add "ay"
+debugger;
+               // stringArray[i][0].
+
+            }
+            stringArray.join(' ');
+            console.log(stringArray);
+
+            return newString;
+        }
+
+        console.log(translate('Hello my name is Stu'))
+
+
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

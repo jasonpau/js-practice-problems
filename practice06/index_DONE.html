@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Numeric Spirals - Fibonacci Sequence - DONE</title>
+    <script>
+        function fibonacci(length) {
+            let fibonacciNumbers = [0,1];
+
+            for (let i = fibonacciNumbers.length; i < length; i++) {
+                fibonacciNumbers.push(fibonacciNumbers[i - 2] + fibonacciNumbers[i - 1]);
+            }
+            return fibonacciNumbers;
+        }
+        console.log(fibonacci(15));
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

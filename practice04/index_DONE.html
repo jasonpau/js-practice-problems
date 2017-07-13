@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort - DONE</title>
+
+    <script>
+        const myArray = ['mouse', 'cat', 'dog', 'human'];
+
+        const sort = array => {
+
+            // go through each "word" in the array
+            for (let i = 0; i < array.length; i++) {
+
+                // check if the order is incorrect, and swap positions and restart the loop if so
+                if (array[i] > array[i + 1]) {
+                    let temp = array[i + 1];    // set aside the second entry
+                    array[i + 1] = array[i];    // replace the second entry with the first
+                    array[i] = temp;            // replace the first with the second (which was set aside)
+                    i = 0;
+                }
+            }
+            return array;
+        };
+
+        console.log('Alphabetical array: ', sort(myArray));
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

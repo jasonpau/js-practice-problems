@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Igpay Atinlay</title>
+
+    <script>
+
+        function translate(myString) {
+
+            var newString = '';
+
+            var vowels = ['a','e','i','o','u'];
+
+            // split up string into array of strings?
+            var stringArray = myString.split(' ');
+
+            // i hate strings, so split each word into an array
+            for (var i = 0; i < stringArray.length; i++) {
+                stringArray[i] = stringArray[i].split('');
+            }
+
+            // loop through each word in array
+            for (var i = 0; i < stringArray.length; i++) {
+
+
+                // if first letter is a vowel, just add "ay" (for loop with if statement), and skip capitalization
+
+                // check if position 0 is capitalized, if so lowercase it, and capitalize position 1
+                if (stringArray[i][0] === stringArray[i][0].toUpperCase()) {
+                    stringArray[i][0] = stringArray[i][0].toLowerCase();
+                    stringArray[i][1] = stringArray[i][1].toUpperCase();
+                }
+
+                // set aside first letter, remove first letter, then add it to the end
+                var firstLetter = stringArray[i][0];
+                stringArray[i].shift();
+                stringArray[i].push(firstLetter);
+
+                // convert modified word array back into string, and concat 'ay'
+                console.log(stringArray[i]);
+                stringArray[i].join('');
+                stringArray[i] = stringArray[i].replace(',','');
+                console.log(stringArray[i]);
+                stringArray[i] += 'ay';
+            }
+            stringArray.join(' ');
+            console.log(stringArray);
+
+            return stringArray;
+        }
+
+        console.log(translate('Hello my name is Stu'))
+
+
+    </script>
+</head>
+<body>
+<h1>Inspect!</h1>
+</body>
+</html>

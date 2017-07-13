@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Roman Numerals - DONE</title>
+
+
+    <script>
+
+        function convertToRomanNumerals(num) {
+            let romanNumeralOutput = '';
+
+            // make sure our input can be used as a number, and that it's within range
+            if (isNaN(num)) {
+                document.write('Please enter a number!');
+                return '';
+            } else if (parseInt(num) > 3999 || parseInt(num) < 1) {
+                document.write('Roman numerals must be between 1 and 3999!');
+                return '';
+            }
+
+            const romanNumerals =  [
+                { // ones
+                    0: '',
+                    1: 'I',
+                    2: 'II',
+                    3: 'III',
+                    4: 'IV',
+                    5: 'V',
+                    6: 'VI',
+                    7: 'VII',
+                    8: 'VIII',
+                    9: 'IX',
+                },
+                { // tens
+                    0: '',
+                    1: 'X',
+                    2: 'XX',
+                    3: 'XXX',
+                    4: 'XL',
+                    5: 'L',
+                    6: 'LX',
+                    7: 'LXX',
+                    8: 'LXXX',
+                    9: 'XC',
+                },
+                { // hundreds
+                    0: '',
+                    1: 'C',
+                    2: 'CC',
+                    3: 'CCC',
+                    4: 'CD',
+                    5: 'D',
+                    6: 'DC',
+                    7: 'DCC',
+                    8: 'DCCC',
+                    9: 'CM',
+                },
+                { // thousands
+                    1: 'M',
+                    2: 'MM',
+                    3: 'MMM',
+                }
+            ];
+
+            // check each "digit" in our "number", starting at the "ones" place on the furthest right
+                // using the digit at that place, look up the roman numeral equivalent ???
+                    // concat that digit's string to the beginning of our output string.
+
+            //var start = performance.now();
+            for (let i = num.length - 1, decimalDigit = 0; i >= 0; i--, decimalDigit++) {
+                romanNumeralOutput = romanNumerals[decimalDigit][num[i]] + romanNumeralOutput;
+            }
+            //var end = performance.now();
+
+            //console.log(end-start);
+            return romanNumeralOutput;
+        }
+
+        document.write(convertToRomanNumerals(prompt('Enter a number to convert it to Roman Numerals!')));
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

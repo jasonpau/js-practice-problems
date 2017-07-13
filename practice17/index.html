@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skippy Numbers</title>
+    <script>
+
+//        Given the following function call:
+//
+//        skippy_numbers(2);
+//        And the resulting output:
+//
+//            [2,3,5,6,8,9,11,12];
+//        Create a function definition that achieves the output with the given input.
+
+        // VERSION 1
+        function skippy_numbers1(number) {
+            var output = [];
+
+            // start at the number passed in, X
+
+            // every X entries, skip that number
+                // use separate incrementer that starts at 0, and runs up until X
+                // once we hit X, we skip pushing to the array, and reset the incrementer
+
+            let skipper  = 0;
+
+            for (let i = number; i < 13; i++) {
+                if (skipper === number) {
+                    skipper = 0;
+                    continue;
+                } else {
+                    output.push(i);
+                }
+
+                skipper++;
+            }
+            return output;
+        }
+        console.log('V1: ', skippy_numbers1(2));
+
+        // VERSION 2
+        function skippy_numbers2(number) {
+            var output = [];
+            let skipper  = 0;
+            let i = number;
+
+            while (output.length < 8) {
+                if (skipper === number) {
+                    skipper = 0;
+                } else {
+                    output.push(i);
+                    skipper++;
+                }
+                i++;
+            }
+            return output;
+        }
+        console.log('V2: ', skippy_numbers2(2));
+
+        // VERSION 3
+        function skippy_numbers3(number) {
+            var output = [];
+
+
+            return output;
+        }
+        console.log('V3: ', skippy_numbers3(2));
+
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

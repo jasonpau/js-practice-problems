@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Randomize Array</title>
+    <script>
+
+        const input_array = [
+            5, '3', true, 2, 'stuff'
+        ];
+
+        function randomize_list(array) {
+            const output = [];
+
+            // run this 'loop' as long as we've still got an element in our input array
+            while (array.length > 0) {
+
+                // generate a random number between 0 and the index of the last element in the input array
+                let random = Math.floor(Math.random() * array.length);
+
+                // remove an item from the input array at the random index position, and push into the output array
+                output.push(array.splice(random, 1)[0]);
+
+                // HINT: you can select an element from an "anonymous" array, like above.
+                    // (otherwise I ended up with nested arrays)
+            }
+            return output;
+        }
+
+        console.log(randomize_list(input_array));
+
+    </script>
+</head>
+<body>
+    <h1>Inspect!</h1>
+</body>
+</html>

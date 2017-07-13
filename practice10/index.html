@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Permutations</title>
+  <script>
+
+    function permutations(string) {
+      // ^^^ string of the remaining letters
+
+      // return .... every available option +  call the function again for the options that aren't sent in
+
+    }
+
+    //console.log(permutations('abc'));
+
+
+
+    // reverse a string using a recursive function call
+    function reverseStringRecursively(string) {
+      // we need to check if we should stop...e.g. if input string is empty?
+      if (!string) { return '' }
+
+      let lastLetter = string.slice(-1);
+      let restOfString = string.slice(0, -1);
+
+      // we need to return the last letter of our string, along with (the rest of the string reversed recursively)
+      return lastLetter + reverseStringRecursively(restOfString);
+    }
+    console.log(reverseStringRecursively('this is a string'));
+
+
+    // capitalize every element in an array using recursion
+    function mapRecursively2(array) {
+
+      // if we are down to just one element, return just that element (capitalized)
+      if (!array[1]) { return [array[0].toUpperCase()]; }
+
+      // otherwise, return an array containing just the first letter of the input array (capitalized),
+        // and then concat the returned value the mapRecursively2 function, passing in the remaining array elements (sans first letter)
+      return [array[0].toUpperCase()].concat(mapRecursively2(array.slice(1)));
+    }
+    console.log(mapRecursively2(['a','b','c']));
+
+
+
+  </script>
+</head>
+<body>
+  <h1>Inspect!</h1>
+</body>
+</html>

@@ -16,7 +16,7 @@
     }
 
     /*.square:nth-child(3){*/
-      /*clear: left;*/
+    /*clear: left;*/
     /*}*/
 
     #target{
@@ -44,30 +44,16 @@
      circle, it won't do anything
      */
 
-    $(document).ready(init);
-
-    function init(){
-
+    $(document).ready(function(){
       $('body').on('click', '.square', function(){
-        const start = performance.now();
-        // verify that the square we clicked actually contains the circle
         if ($(this).find('#target').length) {
-
-          // generate random number between 0 and 3
-          let random = Math.floor(Math.random() * document.querySelectorAll('.square').length);
-
-          // this is a genius method for making sure we never include the element/index we clicked on
-          // if the random number generated is equal to or greater than the current index, just add one.
-          // we just need to make our random number generator goes up one less than it would have otherwise
+          let random = Math.floor(Math.random() * document.querySelectorAll('.square').length - 1);
           if (random >= $(this).index()) random++;
-
-          // select the random square, and append the circle to it
           $('.square').eq(random).append($('#target'));
-          const end = performance.now();
-          console.log(end-start);
         }
       });
-    }
+    });
+
   </script>
 
 </head>
